@@ -4,26 +4,50 @@ import (
 	"fmt"
 )
 
-func Nil(v any, format string, args ...any) {
+func Nil(v any, msg string) {
 	if v != nil {
-		panic(fmt.Sprintf(format, args...))
+		panic(fmt.Errorf("%s", msg))
 	}
 }
 
-func NotNil(v any, format string, args ...any) {
+func Nilf(v any, format string, args ...any) {
+	if v != nil {
+		panic(fmt.Errorf(format, args...))
+	}
+}
+
+func NotNil(v any, msg string) {
 	if v == nil {
-		panic(fmt.Sprintf(format, args...))
+		panic(fmt.Errorf("%s", msg))
 	}
 }
 
-func True(cond bool, format string, args ...any) {
+func NotNilf(v any, format string, args ...any) {
+	if v == nil {
+		panic(fmt.Errorf(format, args...))
+	}
+}
+
+func True(cond bool, msg string) {
 	if !cond {
-		panic(fmt.Sprintf(format, args...))
+		panic(fmt.Errorf("%s", msg))
 	}
 }
 
-func False(cond bool, format string, args ...any) {
+func Truef(cond bool, format string, args ...any) {
+	if !cond {
+		panic(fmt.Errorf(format, args...))
+	}
+}
+
+func False(cond bool, msg string) {
 	if cond {
-		panic(fmt.Sprintf(format, args...))
+		panic(fmt.Errorf("%s", msg))
+	}
+}
+
+func Falsef(cond bool, format string, args ...any) {
+	if cond {
+		panic(fmt.Errorf(format, args...))
 	}
 }
