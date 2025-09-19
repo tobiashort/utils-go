@@ -1,4 +1,4 @@
-package xslices
+package slices
 
 import (
 	"slices"

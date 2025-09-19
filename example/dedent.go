@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/tobiashort/utils-go/xstrings"
+	strings2 "github.com/tobiashort/utils-go/strings"
 )
 
 func main() {
@@ -14,6 +14,6 @@ func main() {
 		 |fermentum vitae ligula. Sed eu convallis sapien.`
 	fmt.Println(s)
 	fmt.Println("-------------")
-	fmt.Println(xstrings.Dedent(s))
+	fmt.Println(strings2.Dedent(s))
 	fmt.Println("-------------")
 }
